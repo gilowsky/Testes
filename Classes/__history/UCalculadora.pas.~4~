@@ -1,0 +1,21 @@
+unit UCalculadora;
+
+interface
+
+uses SysUtils;
+
+  type
+
+    TCalculadora = class(TObject)
+
+      private
+
+      public
+        rValor01 : Real;
+        rValor02 : Real;
+
+    end;
+
+implementation
+
+end.

@@ -1,0 +1,70 @@
+unit UCaculadoraBasica;
+
+interface
+
+uses SysUtils, Math, UCalculadora;
+
+  type
+
+    {TipoOperacoes}
+    TOperadores = (opAdicao,opSubtracao,opDivisao,opMultiplicacao);
+
+    TCalculadoraBasica = class(TCalculadora)
+
+      function Calcular : Real; override;
+
+      private
+
+      public
+        Operacao : TOperadores;
+
+    end;
+
+implementation
+
+{ TCalculadoraBasica }
+
+function TCalculadoraBasica.Calcular: Real;
+begin
+
+  Result := 0;
+
+  if Operacao = opAdicao then
+  begin
+
+  end;
+
+  case (Operacao) of
+    opAdicao:
+    begin
+      soma:=valor1+valor2;
+      visor.text:=FloatToStr(soma);
+    end;
+    2:
+    begin
+      soma:=valor1-valor2;
+      visor.text:=FloatToStr(soma);
+    end;
+    3:
+    begin
+      soma:=valor1*valor2;
+      visor.text:=FloatToStr(soma);
+    end;
+    4:
+    begin
+      if(valor2<>0)then
+        begin
+          soma:=valor1/valor2;
+          visor.text:=FloatToStr(soma);
+        end
+      else
+        begin
+          SHowMessage('Divisão por zero!!');
+          visor.Text:='ERRO';
+        end
+    end
+  end;  //finaliza o  case
+
+end;
+
+end.
